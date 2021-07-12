@@ -8,6 +8,26 @@ Our Bot uses an offline backend corpus as a knowledge base which user can change
 
 ## Installation
 
+
+
+### Docker 
+
+Install Docker desktop  [here](https://www.docker.com/products/docker-desktop)
+
+and then in your terminal 
+
+```
+docker pull ruslanmv/chatbot:latest
+```
+
+go to  your browser
+
+```
+http://localhost:5000/
+```
+
+### Local
+
 Install anaconda, and  follow the next steps in the cmd terminal
 
 ```
@@ -46,9 +66,7 @@ go to  your browser
 http://localhost:5000/
 ```
 
-
-
-## Docker
+### Docker Local
 
 ```
 git clone https://github.com/ruslanmv/chatbot
