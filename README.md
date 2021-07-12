@@ -8,7 +8,7 @@ Our Bot uses an offline backend corpus as a knowledge base which user can change
 
 ## Installation
 
-
+Install anaconda, and  follow the next steps in the cmd terminal
 
 ```
 conda create -n chatbotweb python==3.7
@@ -30,7 +30,7 @@ cd chatbot
 pip install -r requirements.txt
 ```
 
-If you are in windows the following step should be thought admin 
+If you are in windows  you should have admin privileges
 
 ```
 python -m spacy download en
