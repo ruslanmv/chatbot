@@ -8,16 +8,16 @@ from chatterbot.response_selection import get_first_response
 app = Flask(__name__)
 # Create object of ChatBot class with Storage Adapter
 bot = ChatBot(
-    'Annapaola', 
-    logic_adapters=["chatterbot.logic.BestMatch"],
+    'Annapaola',
+    logic_adapters=['chatterbot.logic.MathematicalEvaluation',"chatterbot.logic.BestMatch"],
     response_selection_method = get_first_response,
 )
 # Inport ListTrainer
 from chatterbot.trainers import ListTrainer
 trainer = ListTrainer(bot)
 trainer.train([
-'Hi',
-'Hello',
+'annapaola',
+'that is my name',
 'ruslan',
 'visit ruslanmv.com'
 ])
@@ -30,12 +30,12 @@ trainer.train("chatterbot.corpus.english")
 # Now we can export the data to a file
 #trainer.export_for_training('./my_export.json')
 @app.route("/")
-def home():  
+def home():
     return render_template("home.html")
 @app.route("/get")
 def get_bot_response():
-    userText = request.args.get('msg') 
+    userText = request.args.get('msg')
     response = bot.get_response(userText)
     return str(response)
-if __name__ == "__main__":    
+if __name__ == "__main__":
     app.run(host='0.0.0.0',debug = False)
